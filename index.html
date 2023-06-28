@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Esso-IDP</title>
+	<!--<link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
+	<style>
+        :root {
+            --color1: #77b5fe;
+            --color2: #d89584;
+            --color3: #f4f4f4;
+            --color4: #979797;
+            --color5: #3463aac9;
+            --color6: #656565;
+            --color7: #ff7200;
+        }
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .main {
+            width: 100%;
+            background: linear-gradient(to top,rgba(0,0,0,0.5)50%, rgba(0,0,0,0.5)50%), url(IMG-20230619-WA0176.jpg);
+            background-position: center;
+            background-size: cover;
+            height: 109vh;
+        }   
+        .navbar {
+            width: 1200px;
+            height: 75px;
+            margin: auto;
+        }
+        .icon {
+            width: 200px;
+            float: left;
+            height: 70px;
+        }
+        .logo {
+            color: var(--color1);
+            font-size: 30px;
+            font-family: Arial;
+            padding-left: 50px;
+            float: left;
+            padding-top: 40px;
+        }
+        .menu {
+           width: 250px; 
+           float: left;
+           height: 70px;
+        }
+        .ul1 {
+            float: left;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .ul1 li {
+            list-style: none;
+            margin-left: 60px;
+            margin-top: 27px;
+            font-size: 14px;
+        }
+        .ul1 li a {
+            text-decoration: none;
+            color: white;
+            font-family: Arial;
+            font-weight: bold;
+            transition: 0.4s ease-in-out;
+        }
+        .ul1 li a:hover {
+            color: var(--color7);
+        }
+        .ul1 li:hover .ul2{
+            display: block;
+        }
+        .ul2 {
+            display: none;
+            position: absolute;
+            background-color: var(--color1);
+            width: 250px;
+        }
+        .ul2 li a {
+            color: white;
+        }
+        .ul2 li {
+            display: block;
+            text-align: justify-All;
+        }
+        .search {
+            width: 330px;
+            float: left;
+            margin-left: 270px;
+        }
+        .srch {
+            font-family: 'Times New Roman';
+            width: 200px;
+            height: 40px;
+            background: transparent;
+            border: 1px solid var(--color1);
+            margin-top: 13px;
+            color: #fff;
+            border-right: none;
+            font-size: 16px;
+            float: left;
+            padding: 10px;
+            border-bottom-left-radius: 5px;
+            border-top-left-radius: 5px;
+
+        }
+        .btn {
+            width: 100px;
+            height: 40px;
+            background: var(--color1);
+            border: 2px solid var(--color1);
+            margin-top: 13px;
+            color: #fff;
+            font-size: 14px;
+            border-bottom-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        .btn:focus{
+            outline: none;
+        }
+        .srch:focus{
+            outline: none;
+        }
+        .content {
+            width: 1200px;
+            height: auto;
+            margin: auto;
+            color: #fff;
+            position: relative;
+        }
+        .content .par {
+            padding-left: 20px;
+            padding-bottom: 25px;
+            font-family: Arial;
+            letter-spacing: 1.2px;
+            line-height: 30px;
+        }
+        .content h1 {
+            font-family: 'Times New Roman';
+            font-size: 50px;
+            padding-left: 20px;
+            margin-top: 9%;
+            letter-spacing: 2px;
+        }
+        .content .cn {
+            width: 180px;
+            height: 40px;
+            background: var(--color1);
+            border: none;
+            margin-bottom: 10px;
+            margin-left: 20px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: .3s ease;
+        }
+        .content .cn a {
+            text-decoration: none;
+            color: #000;
+            transition: .3s ease;
+        }
+        .cn:hover {
+            background-color: #fff;
+        }
+        .content span {
+            color: var(--color1);
+            font-size: 60px;
+        }
+        .form {
+            width: 250px;
+            height: 380px;
+            background: linear-gradient(to top,rgba(0,0,0,0.8)50%, rgba(0,0,0,0.8)50%);
+            position: absolute;
+            top: -20px;
+            left: 920px;
+            border-radius: 10px;
+            padding: 25px;
+        }
+        .form h2 {
+            width: 220px;
+            font-family: sans-serif;
+            text-align: center;
+            color: var(--color1);
+            font-size: 22px;
+            background-color: #fff;
+            border-radius: 10px;
+            margin: 2px;
+            padding: 8px;
+        }
+        .form input {
+            width: 240px;
+            height: 35px;
+            background: transparent;
+            border-bottom: 1px solid var(--color1);
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            color: #fff;
+            font-size: 15px;
+            letter-spacing: 1px;
+            margin-top: 30px;
+            font-family: sans-serif;
+        }
+        .form:focus {
+            outline: none;
+        }
+        ::placeholder {
+            color: #fff;
+            font-family: Arial;
+        }
+        .btnn {
+            width: 240px;
+            height: 40px;
+            background: var(--color1);
+            border: none;
+            margin-top: 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            color: #fff;
+        }
+        .btnn:hover {
+            background-color: #fff;
+            color: var(--color1);
+        }
+        .btnn a {
+            text-decoration: none;
+            color: #000;
+            font-weight: bold;
+        }
+        .form .link {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 17px;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .form .link a {
+            text-decoration: none;
+            color: var(--color1);
+        }
+        .liw {
+            padding-top: 15px;
+            padding-bottom: 10px;
+            text-align: center;
+        }
+        .icons a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .icons ion-icon {
+            color: #fff;
+            font-size: 30px;
+            padding-left: 14px;
+            padding-top: 5px;
+            transition: 0.3s ease;
+        }
+        .icons ion-icon:hover{
+            color: #ff7200;
+        }
+        .esso_logo {
+            position: absolute;
+            top: 0px;
+            left: 10px;
+            width: 100px;
+            height: 100px;
+            padding-left: 8px;
+        }
+        @media only screen and (min-width: 768px) {
+            .menu {
+                width: 400px; 
+            }
+            .navbar {
+                width: 1200px;
+                height: 75px;
+                margin: auto;
+            }
+            .icon {
+                width: 200px;
+                float: left;
+                height: 70px;
+            }
+            .ul1 {
+                float: left;
+                display: flex;
+            }
+            .ul1 li {
+                margin-left: 60px;
+                margin-top: 27px;
+                font-size: 14px;
+            }
+            .search {
+                width: 330px;
+                float: left;
+                margin-left: 270px;
+            }
+            .content {
+                width: 1200px;
+            }
+            .content h1 {
+                font-size: 50px;
+                padding-left: 20px;
+                margin-top: 9%;
+                letter-spacing: 2px;
+            }
+            .content span {
+                font-size: 60px;
+            }
+            .form {
+                width: 250px;
+                height: 380px;
+                position: absolute;
+                top: -20px;
+                left: 920px;
+            }
+            .form h2 {
+                width: 220px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="navbar">
+            <div class="icon">
+                <img class="esso_logo" src="image2.jpeg">
+                <h2 class="logo">ESSO-IDP</h2>
+            </div>
+            <div class="menu">
+                <ul class="ul1">
+                    <li>
+                        <a href="" title="Contacts">CONTACTS</a>
+                        <ul class="ul2">
+                            <li>
+                                <a href="mailto:ciersainformation@gmail.com?subject=Contact%20depuis%20esso-idp.com">Mail.com</a>
+                            </li>
+                            <li>
+                                <a href="tel:+237655271649">Téléphone(+237)</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="https://www.forum.esso-idp.com/" title="Forum">FORUM</a>
+                    </li>
+                    <li>
+                        <a href="" title="Boutique">BOUTIQUE</a>
+                    </li>
+                    <li>
+                        <a href="" title="Métiers">METIERS</a>
+                        <ul class="ul2">
+                            <li>
+                               <a class="contact-button" href="Esso-idp.html">DE LA CREATIVITE</a>
+                            </li>
+                            <li>
+                               <a class="contact-button" href="Esso-idp3.html">DE L'INNOVATION</a>
+                            </li>
+                            <li>
+                              <a class="contact-button" href="Esso-idp2.html">DE L'INVENTIVITE</a>
+                            </li>
+                            <li>
+                               <a class="contact-button" href="Esso-idp4.html">DE LA CAPITALISATION</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li>
+                        <a href="" title="Se connecter">SE CONNECTER</a>
+                    </li>-->
+                </ul>
+            </div>
+            <div class="search">
+                <input class="srch" type="search" name="" placeholder="Type to text">
+                <a href="#"><button class="btn"> Search</button></a>
+            </div>
+
+        </div>
+        <div class="content">
+            <h1>PLATEFORME <br> DE<span> PROFESSIONALISATION</span> & <br> DE<span> CREATIVITE</span></h1>
+            <p class="par">S'aventurer à Créer sans mode de pensée prérequis préalabre 
+                est<br>simplement une illusion et une perte de temps alors <br>professionnaliser vous 
+                d'abord après vous pourrez penser <br> facilement un concept nouveau.</p>
+                <button class="cn"><a href="mailto:ciersainformation@gmail.com?subject=Contact%20depuis%20esso-idp.com">NOUS CONTACTER</a></button>
+                
+                <div class="form">
+                    <h2> SE CONNECTER</h2>
+                    <input type="email" name="email" placeholder="Entrer votre Email ici">
+                    <input type="password" name="" placeholder="Entrer votre mot de passe ici">
+                    <button class="btnn"><a href="" title="Se connecter">CONNECTER</a></button>
+
+                    <p class="link">Vous n'avez pas de compte<br>
+                    <a href="#">S'inscrire</a></p>
+                    <p class="liw">Se connecter avec</p>
+
+                    <div class="icons">
+                        <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-twitter"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-google"></ion-icon></a>
+                        <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <script src="https://unpkg.com/ionicons@4.5.0/dist/ionicons.js"></script>
+</body>
+</html>
